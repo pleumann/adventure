@@ -1,0 +1,17 @@
+# Sources and data files use CRLF line endings (native CP/M format, same as
+# upstream). Store them byte-for-byte without any line-ending conversion so
+# that no artificial changes appear, regardless of core.autocrlf settings.
+*.pas   -text
+*.PAS   -text
+*.dat   -text
+*.DAT   -text
+*.txt   -text
+
+# Binaries and disk images
+*.COM   binary
+*.exe   binary
+*.dsk   binary
+*.img   binary
+*.d71   binary
+*.atr   binary
+*.xfd   binary
