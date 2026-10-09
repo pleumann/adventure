@@ -1,3 +1,32 @@
+{$ifdef PASTA}
+
+{ Sets fixed configuration for the PASTA/80 target platforms }
+procedure Read_Configuration;
+begin
+
+  left_margin := 0;
+  chars_per_line := ScreenWidth - 1;
+
+{$ifdef SYS_CPM}
+  r_start := #27'p';          { VT52: reverse on }
+  r_exit := #27'q';           { VT52: reverse off }
+  s_clrscr := #27'H'#27'J';   { VT52: home, clear to end of screen }
+{$endif}
+{$ifdef SYS_AGON}
+  r_start := #17#135;         { VDU 17,135: white background }
+  r_exit := #17#128;          { VDU 17,128: black background }
+  s_clrscr := #12;            { VDU 12: CLS }
+{$endif}
+{$ifdef SYS_ZXNEXT}
+  r_start := #20#1;           { INVERSE 1 }
+  r_exit := #20#0;            { INVERSE 0 }
+  s_clrscr := '';             { no control code, see Clear_Screen }
+{$endif}
+
+end;
+
+{$else}
+
 { Reads stored configuration }
 procedure Read_Configuration;
 var
@@ -38,5 +67,19 @@ begin
   Val (s_chars_per_line, chars_per_line, val_result);
 
   Close (file_var);
+
+end;
+
+{$endif}
+
+{ Clears the screen }
+procedure Clear_Screen;
+begin
+
+{$ifdef SYS_ZXNEXT}
+  ClrScr;
+{$else}
+  Write(s_clrscr);
+{$endif}
 
 end;

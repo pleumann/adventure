@@ -1,6 +1,8 @@
 program Adventure;
 
+{$ifndef PASTA}
 uses crt;
+{$endif}
 
 {$I TYPES.PAS}
 {$I CONSTS.PAS}
@@ -46,7 +48,7 @@ begin
 
   Read_Configuration;
 
-  Write(s_clrscr);
+  Clear_Screen;
 
   current_state := STATE_TITLE;
   
@@ -65,7 +67,7 @@ begin
         Init_Inventory;
         Init_Hero;
 
-        Write(s_clrscr);
+        Clear_Screen;
 
         if r_start = '' then begin
 

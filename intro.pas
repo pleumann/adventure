@@ -1,4 +1,4 @@
-Write(s_clrscr);
+Clear_Screen;
 Print_Formatted_Text ('Welcome, traveller! You are a hero traversing the ancient world of central Europe, full of ' +
                       'mysterious gods and dangerous monsters.');
 Print_Formatted_Text ('Your goal is to find four artefacts of power: The Stone of Perun, the Hammer of Svarog, ' +
