@@ -47,9 +47,13 @@ var
 { Main program}
 begin
 
+{$ifdef SYS_ZXNEXT}
+  SetCpuSpeed(3);             { 28 MHz }
+{$endif}
+
   Read_Configuration;
 
-  Clear_Screen;
+  Write(s_clrscr);
 
   current_state := STATE_TITLE;
   
@@ -68,7 +72,7 @@ begin
         Init_Inventory;
         Init_Hero;
 
-        Clear_Screen;
+        Write(s_clrscr);
 
         if r_start = '' then begin
 

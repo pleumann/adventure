@@ -23,7 +23,7 @@
     Get_Narration(184);
     Get_Narration(185);
     Writeln;
-    Writeln ('Press [T] to teleport.')
+    Print_Formatted_Text ('Press [T] to teleport.')
 
   end;
 

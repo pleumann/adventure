@@ -18,9 +18,10 @@ begin
   s_clrscr := #12;            { VDU 12: CLS }
 {$endif}
 {$ifdef SYS_ZXNEXT}
+  chars_per_line := 50;       { layer 1,1 (set by loader.bas): 51 columns }
   r_start := #20#1;           { INVERSE 1 }
   r_exit := #20#0;            { INVERSE 0 }
-  s_clrscr := '';             { no control code, see Clear_Screen }
+  s_clrscr := #14;            { clear window }
 {$endif}
 
 end;
@@ -71,15 +72,3 @@ begin
 end;
 
 {$endif}
-
-{ Clears the screen }
-procedure Clear_Screen;
-begin
-
-{$ifdef SYS_ZXNEXT}
-  ClrScr;
-{$else}
-  Write(s_clrscr);
-{$endif}
-
-end;
