@@ -42,6 +42,7 @@ var
 {$I INIT.PAS}
 {$I INVENTRY.PAS}
 {$I DEFKEYS.PAS}
+{$I LOCS.PAS}
 
 { Main program}
 begin
@@ -127,7 +128,7 @@ begin
         game_over := FALSE;
         game_won := FALSE;
       
-        {$I INTRO.PAS }
+        Intro;
         
         repeat
         
@@ -135,177 +136,177 @@ begin
 
             LOCATION_SACRED_GROVE:
             begin 
-            {$I L01.PAS} 
+              Location_01; 
             end;
 
             LOCATION_ETERNAL_WHISPER:
             begin 
-            {$I L02.PAS} 
+              Location_02; 
             end;
 
             LOCATION_CROSSROADS_OF_THORNS:
             begin 
-            {$I L03.PAS} 
+              Location_03; 
             end;
 
             LOCATION_CLIFF_OF_FORGETFULNESS:
             begin 
-            {$I L04.PAS} 
+              Location_04; 
             end;
 
             LOCATION_TOMB_OF_THE_GODS:
             begin 
-            {$I L05.PAS} 
+              Location_05; 
             end;
 
             LOCATION_FOREST_OF_WHISPERS:
             begin 
-            {$I L06.PAS} 
+              Location_06; 
             end;
 
             LOCATION_STONE_THRESHOLD:
             begin 
-            {$I L07.PAS} 
+              Location_07; 
             end;
 
             LOCATION_SOUNDLESS_PASS:
             begin 
-            {$I L08.PAS} 
+              Location_08; 
             end;
 
             LOCATION_LAKE: 
             begin 
-            {$I L09.PAS} 
+              Location_09; 
             end;
 
             LOCATION_ISLAND:
             begin 
-            {$I L10.PAS} 
+              Location_10; 
             end;
 
             LOCATION_INFINITE_STAIRCASE:
             begin 
-            {$I L11.PAS} 
+              Location_11; 
             end;
 
             LOCATION_CROSSROADS_OF_SHADOWS:
             begin 
-            {$I L12.PAS} 
+              Location_12; 
             end;
 
             LOCATION_GOLDEN_FIELD:
             begin 
-            {$I L13.PAS} 
+              Location_13; 
             end;
 
             LOCATION_BUSHES:
             begin 
-            {$I L14.PAS} 
+              Location_14; 
             end;
 
             LOCATION_START: 
             begin 
-            {$I L15.PAS} 
+              Location_15; 
             end;
 
             LOCATION_MOUND_INSIDE:
             begin 
-            {$I L16.PAS} 
+              Location_16; 
             end;
 
             LOCATION_ECHOES_OF_THE_ANCIENTS:
             begin 
-            {$I L17.PAS} 
+              Location_17; 
             end;
 
             LOCATION_FORGOTTEN_BASIN:
             begin 
-            {$I L18.PAS} 
+              Location_18; 
             end;
 
             LOCATION_FOREST_1:
             begin 
-            {$I L19.PAS} 
+              Location_19; 
             end;
 
             LOCATION_STREAM:
             begin 
-            {$I L20.PAS} 
+              Location_20; 
             end;
 
             LOCATION_CAVE:
             begin 
-            {$I L21.PAS} 
+              Location_21; 
             end;
 
             LOCATION_MOUND:
             begin 
-            {$I L22.PAS} 
+              Location_22; 
             end;
 
             LOCATION_WIND_AND_BONE_PASS:
             begin 
-            {$I L23.PAS} 
+              Location_23; 
             end;
 
             LOCATION_FOREST_2:
             begin 
-            {$I L25.PAS} 
+              Location_25; 
             end;
 
             LOCATION_SPRING:
             begin 
-            {$I L26.PAS} 
+              Location_26; 
             end;
 
             LOCATION_ROCKS:
             begin 
-            {$I L27.PAS} 
+              Location_27; 
             end;
 
             LOCATION_MORANA_CIRCLE:
             begin 
-            {$I L28.PAS} 
+              Location_28; 
             end;
 
             LOCATION_LAKE_OF_SOULS:
             begin 
-            {$I L29.PAS} 
+              Location_29; 
             end;
 
             LOCATION_MELT_SWAMP:
             begin 
-            {$I L30.PAS} 
+              Location_30; 
             end;
 
             LOCATION_FOREST_3:
             begin 
-            {$I L31.PAS} 
+              Location_31; 
             end;
 
             LOCATION_SVAROGS_STONE_CIRCLE:
             begin 
-            {$I L32.PAS} 
+              Location_32; 
             end;
 
             LOCATION_THE_LESHY_VALLEY:
             begin 
-            {$I L33.PAS} 
+              Location_33; 
             end;
 
             LOCATION_LAKE_NIGHT_DAY:
             begin 
-            {$I L34.PAS} 
+              Location_34; 
             end;
 
             LOCATION_DARK_HARBOUR:
             begin 
-            {$I L35.PAS} 
+              Location_35; 
             end;
 
             LOCATION_BLOODY_ROOTS:
             begin 
-            {$I L36.PAS} 
+              Location_36; 
             end;
           
           end;

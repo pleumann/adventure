@@ -1,5 +1,5 @@
 { Initialisation of monster characteristics }
-procedure Init_Monsters;
+{$ifdef PASTA}overlay{$endif} procedure Init_Monsters;
 begin
 
     monsters[LOCATION_LAKE].hit_points := 5;
@@ -54,7 +54,7 @@ end;
 
 
 { Initialisation of hero's equipment}
-procedure Init_Armory;
+{$ifdef PASTA}overlay{$endif} procedure Init_Armory;
 begin
 
     armory.weapon := INITIAL_ARMORY;
@@ -76,7 +76,7 @@ end;
 
 
 { Initialisation of weapon characteristics}
-procedure Init_Weapons;
+{$ifdef PASTA}overlay{$endif} procedure Init_Weapons;
 begin
 
     { weapons }
@@ -185,7 +185,7 @@ end;
 
 
 { Initialisation of locations, contains information on whether or not items have been taken.}
-procedure Init_Locations;
+{$ifdef PASTA}overlay{$endif} procedure Init_Locations;
 var
     map_index, item_index: byte;
 begin
@@ -235,7 +235,7 @@ end;
 
 
 { Initialisation of items carried }
-procedure Init_Inventory;
+{$ifdef PASTA}overlay{$endif} procedure Init_Inventory;
 var 
     inventory_index: byte;
 begin
@@ -245,7 +245,7 @@ end;
 
 
 { Initialises the hero's statistics }
-procedure Init_Hero;
+{$ifdef PASTA}overlay{$endif} procedure Init_Hero;
 begin
     hero.hit_points := INITIAL_HIT_POINTS;
     hero.defence := INITIAL_DEFENCE;
