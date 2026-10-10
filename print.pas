@@ -30,12 +30,12 @@ begin
 
             end;
 
-{$ifdef SYS_ZXNEXT}
-            { Show keys in reverse video, with half blocks instead of brackets }
+{$ifdef KEY_CAPS}
+            { Show keys in reverse video, with half circles instead of brackets }
             for j := 1 to Length(txt_word) do begin
 
-                if txt_word[j] = '[' then Write(#133, r_start)
-                else if txt_word[j] = ']' then Write(r_exit, #138)
+                if txt_word[j] = '[' then Write(#144, r_start)
+                else if txt_word[j] = ']' then Write(r_exit, #145)
                 else Write(txt_word[j]);
 
             end;
