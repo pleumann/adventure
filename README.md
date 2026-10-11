@@ -1,6 +1,23 @@
 # Tale of Ancient Land
 
-A text-based RPG written in Turbo Pascal 3.0 for various retro systems. Designed to be runable primarily on CP/M 2.2 (and CP/M+ aka CP/M 3.0).
+A text-based RPG written in Turbo Pascal 3.0 for various retro systems. Designed to be runnable primarily on CP/M 2.2 (and CP/M+ aka CP/M 3.0). This fork adapts the code to the [PASTA/80](https://github.com/pleumann/pasta80) compiler and provides binaries for its supported systems (currently [Agon](https://agonplatform.github.io/agon-docs), [CP/M](https://en.wikipedia.org/wiki/CP/M), and the [ZX Spectrum Next](https://www.specnext.com)).
+
+<table>
+  <tr>
+    <th align="center">Agon</th>
+    <th align="center">CP/M</th>
+    <th align="center">Next</th>
+  </tr>
+  <tr>
+    <td align="center" valign="top"><img src="images/agon.png" alt="Screenshot Agon"></td>
+    <td align="center" valign="top"><img src="images/cpm.png" alt="Screenshot CP/M"></td>
+    <td align="center" valign="top"><img src="images/next.png" alt="Screenshot Next"></td>
+  </tr>
+</table>
+
+The port itself was rather straightforward. Agon and CP/M worked basically out-of-the-box. The Next, having less resident memory (due to ROM and video RAM), needed overlays. This required rewiring the code a bit. The main command dispatcher, in particular, was much too large. So I enclosed the handler code for each location into its own `overlay procedure`, keeping the changes to existing code as minimal as possible. For Agon and Next I used two User-Defined Graphics (UDGs) to make keys you can press stand out a bit more.
+
+The rest of this document is the original README.md.
 
 ## Systems tested
 
