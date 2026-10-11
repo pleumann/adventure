@@ -3,6 +3,7 @@
 { Keys are shown in reverse video between two half circles (see print.pas),
   which are user-defined characters 144 (left) and 145 (right) }
 {$ifdef SYS_AGON}
+{$define FIXED_CONFIG}
 {$define KEY_CAPS}
 
 const
@@ -27,6 +28,7 @@ const
   );
 {$endif}
 {$ifdef SYS_ZXNEXT}
+{$define FIXED_CONFIG}
 {$define KEY_CAPS}
 
 const
@@ -51,7 +53,11 @@ const
   );
 {$endif}
 
-{ Sets fixed configuration for the PASTA/80 target platforms }
+{$endif}
+
+{$ifdef FIXED_CONFIG}
+
+{ Sets fixed configuration for platforms with a known screen (Agon, Next) }
 procedure Read_Configuration;
 var
   i: byte;
@@ -61,11 +67,6 @@ begin
   left_margin := 0;
   chars_per_line := ScreenWidth - 1;
 
-{$ifdef SYS_CPM}
-  r_start := #27'p';          { VT52: reverse on }
-  r_exit := #27'q';           { VT52: reverse off }
-  s_clrscr := #27'H'#27'J';   { VT52: home, clear to end of screen }
-{$endif}
 {$ifdef SYS_AGON}
   r_start := #17#0#17#143;    { VDU 17: black on bright white }
   r_exit := #17#15#17#128;    { VDU 17: bright white on black }

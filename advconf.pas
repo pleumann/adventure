@@ -1,6 +1,8 @@
 Program Configuration;
 
+{$ifndef PASTA}
 uses crt;
+{$endif}
 
 var
     key_hit             : char;
@@ -30,7 +32,9 @@ const
     CLR_TIMEX   = #27'H'#27'J';
     CLR_NONE    = '';
 
+{$ifndef PASTA}
 {$I READKEY.PAS}
+{$endif}
 
 {}
 procedure Configure;
