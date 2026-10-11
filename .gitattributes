@@ -6,6 +6,7 @@
 *.dat   -text
 *.DAT   -text
 *.txt   -text
+*.bat   -text
 
 # Binaries and disk images
 *.COM   binary
