@@ -104,7 +104,7 @@ begin
         Print_Formatted_Text ('monsters lurk in the shadows of every tree.');
         Writeln;
         Print_Formatted_Text ('          2025 New Generation');
-        Print_Formatted_Text ('              Version 0.95   ');
+        Print_Formatted_Text ('              Version 0.95a  ');
         Writeln;
         Print_Formatted_Text ('  Press [S] to start [Q] to exit to OS.');
         WriteLn;
