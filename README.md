@@ -1,6 +1,6 @@
 # Tale of Ancient Land
 
-A text-based RPG written in Turbo Pascal 3.0 for various retro systems. Designed to be runnable primarily on CP/M 2.2 (and CP/M+ aka CP/M 3.0). This fork adapts the code to the [PASTA/80](https://github.com/pleumann/pasta80) compiler and provides binaries for its supported systems (currently [Agon](https://agonplatform.github.io/agon-docs), [CP/M](https://en.wikipedia.org/wiki/CP/M), and the [ZX Spectrum Next](https://www.specnext.com)).
+A text-based RPG written in Turbo Pascal 3.0 for various retro systems. Designed to be runnable primarily on CP/M 2.2 (and CP/M+ aka CP/M 3.0). This fork adapts the code to the [PASTA/80](https://github.com/pleumann/pasta80) compiler and provides binaries for some of its supported systems (currently [Agon](https://agonplatform.github.io/agon-docs), [CP/M](https://en.wikipedia.org/wiki/CP/M), and the [ZX Spectrum Next](https://www.specnext.com)).
 
 <table>
   <tr>
@@ -15,9 +15,32 @@ A text-based RPG written in Turbo Pascal 3.0 for various retro systems. Designed
   </tr>
 </table>
 
-The port itself was rather straightforward. Agon and CP/M worked basically out-of-the-box. The Next, having less resident memory (due to ROM and video RAM), needed overlays. This required rewiring the code a bit. The main command dispatcher, in particular, was much too large. So I enclosed the handler code for each location into its own `overlay procedure`, keeping the changes to existing code as minimal as possible. For Agon and Next I used two User-Defined Graphics (UDGs) to make keys you can press stand out a bit more.
+The latest binaries are in the folder `bin` and also on the [release page](https://github.com/pleumann/adventure/releases).
 
-The rest of this document is the original README.md.
+The port itself was rather straightforward. Agon and CP/M worked basically out-of-the-box. The Next, having less resident memory (due to ROM and video RAM), needed overlays. This required rewiring the code a bit. The main command dispatcher, in particular, was much too large. So I enclosed the handler code for each location into its own `overlay procedure`, keeping the changes to existing code as minimal as possible. For Agon and Next, I dropped the terminal configuration system, since it is not needed. I also used two User-Defined Graphics (UDGs) to make keys you can press stand out a bit more than they do with the square brackets.
+
+Assuming you have `pasta80` installed and in your `PATH`, all it takes to build the binaries is:
+
+```
+$ ./build.sh        # on Mac or Linux
+$ build.bat         # on a Windows PC
+```
+
+Binaries have been tested with these emulators:
+
+* [Fab Agon Emulator](https://github.com/tomm/fab-agon-emulator) for Agon
+  * Unzip on the SD card.
+  * Run `adventure.bin`.
+* [tnylpo](https://gitlab.com/gbrein/tnylpo) for CP/M.
+  * Unzip into a directory of your choice.
+  * Rename all files to lower-case because tnylpo needs this.
+  * Run `tnylpo -s advconf` to configure the terminal.
+  * Run `tnylpo -s adventur` to play the game.
+* [CSpect](https://mdf200.itch.io/cspect) for the Next
+  * Unzip somewhere on the SD card.
+  * Select `adventure.run` in the browser.
+
+The [original game](https://github.com/delysio/adventure) was written by [Delysio](https://github.com/delysio) und released under [CC-BY-SA-4.0](LICENSE). The rest of the document contains his original README.md unchanged, but does not necessarily apply to this port.
 
 ## Systems tested
 
